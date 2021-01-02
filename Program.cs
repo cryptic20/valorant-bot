@@ -186,8 +186,6 @@ namespace ValorantBotCS
 
 			request.AddHeader("Authorization", $"Bearer {AccessToken}");
 			request.AddHeader("X-Riot-Entitlements-JWT", EntitlementToken);
-			Console.WriteLine(UserID);
-
 
 			request.AddJsonBody(new { PLAYERID = UserID});
 			return client.Execute(request).Content;
