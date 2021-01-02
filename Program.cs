@@ -245,6 +245,11 @@ namespace ValorantBotCS
 							output.Append($"\n\nGame: {i}\nMap: {map}\nDate: {date}\npoints before: {before}\npoints after: {after}\ndifference: {num}\n");
 							i++;
 						}
+						else if (game["CompetitiveMovement"] == "PROMOTED" && i == 1)
+						{
+							rankNumber = game["TierAfterUpdate"];
+							currentRp = game["TierProgressAfterUpdate"];
+						}
 						else if(game["CompetitiveMovement"] == "PROMOTED" || i > 5)
 						{
 							//Console.WriteLine(output.ToString());
